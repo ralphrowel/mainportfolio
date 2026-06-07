@@ -7,12 +7,8 @@
     /* "paper" background */
     background-color: #323647;
     
-
-    /* shape of the paper */
-    border-radius: 12px;
-
     /* inner spacing for all content */
-    padding: 45px;
+    padding: 45px 45px 0 45px;
 
     /* ensures it fills screen height nicely */
     min-height: calc(100vh - 90px);

@@ -4,7 +4,6 @@
     padding: 80px 0 40px;
     margin-left: -45px;
     margin-right: -45px;
-    margin-bottom: -45px;           /* ← pulls footer flush to page bottom */
 }
 
 .footer-container {
