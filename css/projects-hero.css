@@ -1,0 +1,72 @@
+.projects-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    min-height: 380px;              /* ← overall section height — adjust this */
+    gap: 60px;
+}
+
+/* ---- LEFT ---- */
+.projects-hero-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.projects-hero-left h1 {
+    font-size: 58px;                /* ← matches hero name size */
+    line-height: 1.05;
+    margin: 0;
+}
+
+.projects-line {
+    width: 120px;
+    height: 3px;
+    background-color: #F7C461;
+}
+
+.projects-hero-left p {
+    font-size: 15px;
+    line-height: 1.8;
+    opacity: 0.8;
+    max-width: 420px;
+}
+
+.projects-hero-right {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 340px;                  /* ← increased to give room for the spread */
+}
+
+.stack-card {
+    position: absolute;
+    width: 280px;                   /* ← card width — adjust this */
+    height: 220px;                  /* ← card height — adjust this */
+}
+
+/* upper left */
+.stack-card--back {
+    background-color: #c49030;
+    transform: translate(-80px, -80px);   /* ← upper left offset — adjust this */
+    z-index: 2;
+}
+
+/* center — sits on top */
+.stack-card--mid {
+    background-color: #e8a940;
+    transform: translate(0px, 0px);       /* ← center anchor */
+    z-index: 1;
+}
+
+/* bottom right */
+.stack-card--front {
+    background-color: #F7C461;
+    transform: translate(80px, 80px);     /* ← bottom right offset — adjust this */
+    z-index: 3;
+}

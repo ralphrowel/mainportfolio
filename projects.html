@@ -4,8 +4,20 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/projects-hero.css">
+    <link rel="stylesheet" href="css/featured-projects.css">
+    <link rel="stylesheet" href="css/other-projects.css">
 </head>
 <body>
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightboxOutside(event)">
+        <div class="lightbox-box">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <button class="lightbox-prev" onclick="changeSlide(-1)">←</button>
+        <div class="lightbox-slide" id="lightbox-slide"></div>
+        <button class="lightbox-next" onclick="changeSlide(1)">→</button>
+        <div class="lightbox-dots" id="lightbox-dots"></div>
+        </div>
+    </div>
     <div class="page-container">
         <div class="content">
             <nav class="navbar">
@@ -19,8 +31,226 @@
                     <a href="#contact"><b>CONTACT ME</b></a>
                     <a href="#xp"><b>PROJECTS</b></a>
                 </div>
-            </nav>        
+            </nav> 
+            <section class="projects-hero">
+
+                <div class="projects-hero-left">
+                    <h1>My Projects</h1>
+                    <div class="projects-line"></div>
+                    <p>A collection of academic, internship, and personal projects that demonstrate my skills in software development, backend engineering, and data analytics.</p>
+                </div>
+
+                <div class="projects-hero-right">
+                    <div class="stack-card stack-card--back"></div>
+                    <div class="stack-card stack-card--mid"></div>
+                    <div class="stack-card stack-card--front"></div>
+                </div>
+
+            </section>       
         </div>
+        <section class="featured-projects">
+            <div class="content">
+
+                <div class="fp-header">
+                    <h2>Featured Projects</h2>
+                    <div class="fp-header-line"></div>
+                </div>
+
+                <div class="fp-list">
+
+                    <!-- CARD 1 -->
+                    <div class="fp-card">
+                        <div class="fp-info">
+                            <div class="fp-title-row">
+                                <h3>REST API Project</h3>
+                                <a href="https://github.com/ralphrowel/Internship-Project-LibraryAPI" target="_blank" class="fp-github">↗ GitHub</a>
+                            </div>
+                            <div class="fp-badges">
+                                <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+                                <img src="https://img.shields.io/badge/Django_REST-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django REST">
+                                <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+                                <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT">
+                            </div>
+                            <ul>
+                                <li>Implemented JWT authentication for secure user login and protected API access.</li>
+                                <li>Integrated PostgreSQL for persistent data storage and management.</li>
+                                <li>Designed and tested CRUD operations with proper validation and serialization.</li>
+                                <li>Applied authentication and authorization mechanisms to secure sensitive resources.</li>
+                            </ul>
+                        </div>
+                        <div class="fp-image" onclick="openLightbox('api')">
+                            <div class="fp-placeholder fp-p1"><span>Preview 1</span></div>
+                            <div class="fp-click-hint">Click to view</div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="fp-card">
+                        <div class="fp-info">
+                            <div class="fp-title-row">
+                                <h3>Device Signal & Battery Time-Series Analysis</h3>
+                                <a href="https://github.com/ralphrowel/jupyter-projects" target="_blank" class="fp-github">↗ GitHub</a>
+                            </div>
+                            <div class="fp-badges">
+                                <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+                                <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
+                                <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
+                                <img src="https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=python&logoColor=white" alt="Matplotlib">
+                                <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter">
+                            </div>
+                            <ul>
+                                <li>Analyzed multi-device time-series dataset with temperature, battery level, and signal strength across 40 devices.</li>
+                                <li>Developed event detection logic to identify signal loss and recovery patterns in real-time-like logs.</li>
+                                <li>Performed time-based aggregation (hourly and daily) to uncover connectivity trends and instability periods.</li>
+                                <li>Built anomaly detection approach focusing on unusual signal drops and irregular device behavior.</li>
+                                <li>Visualized network performance using heatmaps, time-series plots, and distribution analysis.</li>
+                            </ul>
+                        </div>
+                        <div class="fp-image" onclick="openLightbox('timeseries')">
+                            <div class="fp-placeholder fp-p2"><span>Preview 1</span></div>
+                            <div class="fp-click-hint">Click to view</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="other-projects">
+            <div class="content">
+
+                <div class="op-header">
+                    <h2>Other Projects</h2>
+                    <div class="op-header-line"></div>
+                </div>
+
+                <div class="op-list">
+
+                    <!-- CARD 1 -->
+                    <div class="op-card">
+                        <div class="op-info">
+                            <div class="op-title-row">
+                                <h3>QR Code Generator</h3>
+                                <a href="https://github.com/ralphrowel/python-qr-generator" target="_blank" class="op-github">↗ GitHub</a>
+                            </div>
+                            <div class="op-badges">
+                                <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+                                <img src="https://img.shields.io/badge/Tkinter-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Tkinter">
+                            </div>
+                            <ul>
+                                <li>Developed a desktop application that generates QR codes through a graphical user interface.</li>
+                                <li>Implemented user-friendly input handling and QR image generation features.</li>
+                                <li>Applied object-oriented programming principles to structure the application.</li>
+                            </ul>
+                        </div>
+                        <div class="op-image" onclick="openLightbox('qr')">
+                            <div class="op-placeholder op-p1"><span>Preview 1</span></div>
+                            <div class="op-click-hint">Click to view</div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="op-card">
+                        <div class="op-info">
+                            <div class="op-title-row">
+                                <h3>Animal Biome Educational Website</h3>
+                            </div>
+                            <div class="op-badges">
+                                <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+                                <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+                                <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+                            </div>
+                            <ul>
+                                <li>Created an educational website showcasing animals from different biomes.</li>
+                                <li>Designed responsive web pages with interactive content and organized navigation.</li>
+                                <li>Focused on improving user engagement and educational accessibility.</li>
+                            </ul>
+                        </div>
+                        <div class="op-image" onclick="openLightbox('biome')">
+                            <div class="op-placeholder op-p2"><span>Preview 1</span></div>
+                            <div class="op-click-hint">Click to view</div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="op-card">
+                        <div class="op-info">
+                            <div class="op-title-row">
+                                <h3>Optical Store Management System</h3>
+                            </div>
+                            <div class="op-badges">
+                                <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+                                <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+                                <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+                                <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+                                <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+                            </div>
+                            <ul>
+                                <li>Developed a web-based system for managing patients, prescriptions, inventory, and sales transactions.</li>
+                                <li>Designed and implemented a relational database with multiple interconnected tables.</li>
+                                <li>Created modules for product management, transaction processing, and user account administration.</li>
+                            </ul>
+                        </div>
+                        <div class="op-image" onclick="openLightbox('optical')">
+                            <div class="op-placeholder op-p3"><span>Preview 1</span></div>
+                            <div class="op-click-hint">Click to view</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <footer class="footer" id="contact">
+            <div class="content">
+                <div class="footer-container">
+
+                    <!-- LEFT -->
+                    <div class="footer-left">
+                        <h2>Interested?<br>Let's Talk.</h2>
+                        <p>Email me at</p>
+                        <a href="mailto:ralphrowel00@gmail.com" class="footer-email">
+                            ralphrowel00@gmail.com
+                        </a>
+                    </div>
+
+                    <!-- RIGHT -->
+                    <div class="footer-right">
+                        <h2>Estimate your project?<br>Let me know here.</h2>
+
+                        <!-- replace YOUR_FORM_ID with your Formspree ID when ready -->
+                        <form class="footer-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+                            <div class="form-field">
+                                <label>What's your name?</label>
+                                <input type="text" name="name" placeholder=" " required>
+                            </div>
+
+                            <div class="form-field">
+                                <label>Your fancy Email.</label>
+                                <input type="email" name="email" placeholder=" " required>
+                            </div>
+
+                            <div class="form-field">
+                                <label>Tell me about your project.</label>
+                                <div class="form-last-row">
+                                    <input type="text" name="project" required>
+                                    <div class="form-actions">
+                                        <div class="attach-btn"></div>
+                                        <span class="form-arrow">→</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit">Send it →</button>
+
+                        </form>
+                    </div>
+
+                </div>
+
+                <p class="footer-bottom">© 2026 Ralph Rowel Dela Rosa. All rights reserved.</p>
+
+            </div>
+        </footer>                
     </div>
 
 </body>
