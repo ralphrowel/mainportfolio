@@ -40,7 +40,6 @@
 
 .about-buttons {
     flex: 1;
-
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -57,7 +56,7 @@
 
     cursor: pointer;
     transition: 0.25s ease;
-
+    width: 400px;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
 }

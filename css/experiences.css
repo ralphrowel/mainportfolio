@@ -79,12 +79,17 @@
 
 /* ---- RIGHT: IMAGE PLACEHOLDER ---- */
 .experience-image {
-    margin-top: -40px;              /* matches card padding-top */
-    margin-bottom: -40px;           /* matches card padding-bottom */
-    margin-right: -48px;            /* matches card padding-right */
-    width: 30%;                     /* ← how much of the card it covers — adjust this */
-    height: calc(100% + 80px);      /* compensates for the top + bottom negative margins */
+    margin-top: -40px;
+    margin-bottom: -40px;
+    margin-right: -48px;
+    width: 30%;
     background-color: #F7C461;
-    border-radius: 0;
     flex-shrink: 0;
+    overflow: hidden; /* important */
+}
+.experience-image img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
 }
