@@ -7,8 +7,28 @@
     <link rel="stylesheet" href="css/projects-hero.css">
     <link rel="stylesheet" href="css/featured-projects.css">
     <link rel="stylesheet" href="css/other-projects.css">
+    <link rel="stylesheet" href="css/mobile-notice.css">
+    
 </head>
 <body>
+    <div id="mobile-notice" class="mobile-notice">
+        <div class="mobile-notice-card">
+            <h2>Welcome!</h2>
+            <p>
+                You're viewing this portfolio on a mobile device.
+            </p>
+            <p>
+                I'm currently working on a responsive mobile experience.
+                For the best presentation, I recommend viewing the site on a desktop or laptop.
+            </p>
+            <p>
+                You can still continue and explore the current preview below.
+            </p>
+            <button onclick="continueToPortfolio()">
+                Continue Anyway
+            </button>
+        </div>
+    </div>    
     <div class="lightbox-overlay" id="lightbox" onclick="closeLightboxOutside(event)">
         <div class="lightbox-box">
         <button class="lightbox-close" onclick="closeLightbox()">✕</button>
@@ -263,5 +283,6 @@
             </div>
         </footer>                
     </div>
+<script src="js/mobile-notice.js"></script>
 <script src="js/projects.js"></script>
 </body>

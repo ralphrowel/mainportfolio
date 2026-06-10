@@ -1,0 +1,68 @@
+.mobile-notice {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.85);
+
+    z-index: 9999;
+
+    padding: 20px;
+}
+
+.mobile-notice-card {
+    width: 100%;
+    max-width: 420px;
+
+    background-color: #242734;
+
+    border-radius: 12px;
+
+    padding: 32px;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 40px rgba(0,0,0,0.25),
+        0 25px 80px rgba(0,0,0,0.20);
+
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+.mobile-notice-card h2 {
+    color: #F7C461;
+    margin-bottom: 16px;
+}
+
+.mobile-notice-card p {
+    margin-bottom: 14px;
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+.mobile-notice-card button {
+    margin-top: 12px;
+
+    background-color: #F7C461;
+    color: #242734;
+
+    border: none;
+
+    padding: 12px 24px;
+
+    border-radius: 6px;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.mobile-notice-card button:hover {
+    transform: translateY(-2px);
+}
