@@ -41,7 +41,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 340px;                  /* ← increased to give room for the spread */
+    height: 140px;                  /* ← increased to give room for the spread */
+}
+.projects-hero-right img{
+    height: 220px;
+    width: 310px;
 }
 
 .stack-card {
@@ -52,21 +56,21 @@
 
 /* upper left */
 .stack-card--back {
-    background-color: #c49030;
+    background-color: #242734;
     transform: translate(-80px, -80px);   /* ← upper left offset — adjust this */
     z-index: 2;
 }
 
 /* center — sits on top */
 .stack-card--mid {
-    background-color: #e8a940;
+    background-color: #242734;
     transform: translate(0px, 0px);       /* ← center anchor */
     z-index: 1;
 }
 
 /* bottom right */
 .stack-card--front {
-    background-color: #F7C461;
+    background-color: #242734;
     transform: translate(80px, 80px);     /* ← bottom right offset — adjust this */
     z-index: 3;
 }

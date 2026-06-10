@@ -39,9 +39,10 @@
     background-color: #424657;
     border-radius: 0;
     padding: 40px 48px;
-    min-height: 280px;              /* ← taller than experience cards — adjust this */
+    min-height: 280px;
     box-sizing: border-box;
     overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* ---- LEFT: TEXT ---- */
@@ -111,31 +112,32 @@
     cursor: pointer;
     overflow: hidden;
 }
-fp-image img{
+.fp-image img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     display: block;
+    transition: filter 0.3s ease;
 }
 
-.fp-placeholder {
+.fp-placeholder img {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 16px;
-    color: #242734;
-    transition: transform 0.3s ease;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: filter 0.3s ease;
 }
 
-.fp-p1 { background-color: #e8a940; }
-.fp-p2 { background-color: #F7C461; }
-
+/* remove old scale hover since image is real now */
 .fp-image:hover .fp-placeholder {
-    transform: scale(1.04);
+    transform: none;
+}
+
+/* blur on hover */
+.fp-image:hover .fp-placeholder img {
+    filter: blur(3px) brightness(0.6);
 }
 
 .fp-click-hint {
@@ -174,8 +176,8 @@ fp-image img{
 
 .lightbox-box {
     position: relative;
-    width: 700px;                   /* ← lightbox width — adjust this */
-    height: 440px;                  /* ← lightbox height — adjust this */
+    width: 90vw;                    /* matches experience lightbox */
+    height: 90vh;                   /* matches experience lightbox */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -191,18 +193,30 @@ fp-image img{
 
 .lightbox-close {
     position: absolute;
-    top: -40px;
-    right: 0;
-    background: transparent;
-    border: none;
+    top: 12px;
+    right: 12px;                    /* inside the box now, not above it */
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
-    font-size: 22px;
+    font-size: 18px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
     cursor: pointer;
+    transition: 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
     opacity: 0.7;
-    transition: opacity 0.2s ease;
 }
 
-.lightbox-close:hover { opacity: 1; }
+.lightbox-close:hover {
+    background: #F7C461;
+    color: #242734;
+    border-color: #F7C461;
+    opacity: 1;
+}
 
 .lightbox-prev,
 .lightbox-next {

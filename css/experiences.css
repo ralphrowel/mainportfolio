@@ -107,16 +107,23 @@
 
 .experience-image-hint {
     position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #F7C461;
-    font-size: 13px;
-    font-weight: 600;
+    bottom: 12px;                   /* bottom like projects */
+    left: 50%;
+    transform: translateX(-50%);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
     pointer-events: none;
+}
+
+.experience-image-hint::after {
+    content: 'Preview';
+    font-size: 11px;
+    font-weight: 600;
+    color: #242734;
+    background-color: rgba(247, 196, 97, 0.85);
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
 }
 
 .experience-image:hover .experience-image-hint {
