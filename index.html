@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/about-skill.css">
     <link rel="stylesheet" href="css/experiences.css">
     <link rel="stylesheet" href="css/footer.css">
+    <script src="js/xp.js"></script>
 </head>
 <body>
 
@@ -193,8 +194,9 @@
                                 <li>Developed scalable backend solutions using modern software engineering practices.</li>
                             </ul>
                         </div>
-                        <div class="experience-image">
+                        <div class="experience-image" onclick="openExpLightbox('assets/images/exp/rest.png')">
                             <img src="assets/images/exp/rest.png" alt="">
+                            <div class="experience-image-hint">Preview</div>
                         </div>
                     </div>
 
@@ -208,8 +210,9 @@
                                 <li>Managed and validated large datasets to ensure accuracy.</li>
                             </ul>
                         </div>
-                        <div class="experience-image">
+                        <div class="experience-image" onclick="openExpLightbox('assets/images/exp/data.png')">
                             <img src="assets/images/exp/data.png" alt="">
+                            <div class="experience-image-hint">Preview</div>
                         </div>
                     </div>
 
@@ -223,8 +226,9 @@
                                 <li>Worked with ServiceNow and enterprise support tools.</li>
                             </ul>
                         </div>
-                        <div class="experience-image">
+                        <div class="experience-image" onclick="openExpLightbox('assets/images/exp/dbs.png')">
                             <img src="assets/images/exp/dbs.png" alt="">
+                            <div class="experience-image-hint">Preview</div>
                         </div>
                     </div>
 
@@ -287,5 +291,10 @@
             </div>
         </footer>
     </div>
-
+    <div class="exp-lightbox-overlay" id="exp-lightbox" onclick="closeExpLightboxOutside(event)">
+            <div class="exp-lightbox-box">
+                <button class="exp-lightbox-close" onclick="closeExpLightbox()">✕</button>
+            <img id="exp-lightbox-img" src="" alt="">
+        </div>
+    </div>
 </body>
