@@ -13,8 +13,17 @@
 @media (max-width: 768px) {
     .mobile-notice {
         display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
     }
 }
+
 
 .mobile-notice-card {
     width: 100%;
